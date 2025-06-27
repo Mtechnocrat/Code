@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body1">
+        <h1 id="title" class="heading">DOM MANUPILATION</h1>
+        <p class="para">On going process</p>
+
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.getElementById("title").innerHTML="Ayush";
+
+// const para=document.querySelector("p");
+// para.innerHTML="<B><I>Ayush Kumar</I></B>"
+
+
+// const paraAll=document.querySelectorAll("li"); // this gives node list not an array, so paraAll.style is not valid
+// const newArr=Array.from(paraAll);
+
+
+// newArr.map((li)=>{
+//     li.style.fontSize="1rem";
+//     li.classList.add('list')
+// })
+
+
+const head=document.getElementById('title');
+head.innerHTML="Hello";
+
+
+console.log(head);
+
+
+head.innerHTML="I am working ooot";
+
+// paraAll.forEach((items)=>{
+//     items.style.fontSize="2rem";    items.style.alignContent="Center";
+//     items.style.listStyle="none";
+//     items.classList.add('list');
+// })
+
+
+</script>
+</html>
