@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANUPILATIONS</title>
+</head>
+<body>
+    <div class="parent">
+        <ul>
+
+        </ul>
+    </div>
+</body>
+<script>
+    const ul=document.querySelector("ul");
+    // console.log(ul);
+    ul.setAttribute('class','list');
+    
+    const li=document.createElement('li');
+    li.appendChild(document.createTextNode("Ruby"));
+    // console.log(li);
+    ul.appendChild(li);
+
+    const addELe=function(name){
+        const ele=document.createElement("li");
+        const text=document.createTextNode(name);
+        ele.appendChild(text);
+        ul.appendChild(ele);
+    }
+
+    const addOptELe=(name)=>{
+        const ele=document.createElement("li");
+        ele.appendChild(document.createTextNode(name));
+        ul.appendChild(ele);
+    }
+
+    addELe("Java");
+    addOptELe("C++");
+
+    //Edit Element
+
+    const secLan=document.querySelector("li:nth-child(2)");
+    // secLan.innerHTML="Python";
+
+    const newLi=document.createElement("li");
+    newLi.textContent="Python";
+
+    secLan.replaceWith(newLi);
+    console.log(secLan);
+
+    //edit second approch
+    const firstLan=document.querySelector("li:nth-child(1)");
+    firstLan.outerHTML="<li>C-Sharp</li>";
+    
+
+    //remove
+    const lastEle=document.querySelector("li:last-child");
+    lastEle.remove();
+    
+</script>
+</html>
