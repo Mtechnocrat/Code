@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body{
+            font-size: medium;
+            margin: 10px;
+        }
+
+        .form{
+            display: -ms-inline-grid;
+            margin-left: 26em;
+            left: 50%;
+        }
+        .display{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 5rem;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BMI CALCULATOR</h1>
+    <hr>
+    <div class="form">
+        <form action="">
+            <label>Enter your weight</label>
+            <input type="number" name="weight" id="weight">
+
+            <label>Enter your height</label>
+            <input type="number" id="height">
+            <button id="submit">Calculate</button>
+        </form>
+    </div>
+    <hr>
+    <div class="display">
+        <span id="result"></span>
+    </div>
+    <p class="display"><span style="display: none;" id="one">Underweight: BMI less than 18.5</span><br>
+        <span style="display: none;" id="two">Normal weight: BMI between 18.5 and 24.9</span><br>
+        <span style="display: none;" id="three">Overweight: BMI 25 or higher</span>
+    </p>    
+</body>
+<script>
+const form=document.querySelector("form");
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();//prevents default behaviour of event;
+    const weight=parseInt(document.querySelector("#weight").value);
+    const height=parseInt(document.querySelector("#height").value);
+    const result=document.querySelector("#result");
+
+    const BMI=(weight/((height*height)/10000)).toFixed(2);
+    result.innerHTML=`<span> Your BMI is ${BMI}`;
+
+
+    if(BMI<18.5){
+        const case1=document.querySelector("#one");
+        case1.style.display="block";
+    }else if(BMI>18.5 && BMI <=24.9){
+        const case2=document.querySelector("#two");
+        case2.style.display="block";
+    }else{
+        const case3=document.querySelector("#three");
+        case3.style.display="block";
+    }
+    // console.log(BMI);
+    
+    
+})
+
+
+    
+</script>
+</html>

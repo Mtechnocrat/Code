@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color chager</title>
+    <style>
+        .parent{
+            height:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .box{
+            height: 10rem;
+            width: 10rem;
+            border:1px black solid;
+        }
+
+        #box_1{
+            background-color: aqua;
+        }
+        #box_2{
+            background-color: red;
+        }
+        #box_3{
+            background-color: green;
+        }
+        #box_4{
+            background-color: yellow;
+        }
+
+        h1{
+            margin-left: 25rem;
+        }
+        p{
+            font-size: 3rem;
+            word-wrap: break-word;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <H1>Color Changer</H1>
+    <div class="parent">
+        <div class="box" id="box_1"></div>
+        <div class="box" id="box_2"></div>
+        <div class="box" id="box_3"></div>
+        <div class="box" id="box_4"></div>
+    </div>
+    <p>Try clicking buttons to chanage the background of the webpage</p>
+</body>
+<script>
+    const box=document.querySelectorAll(".box");
+    const body=document.querySelector("body");
+
+    // console.log(body);
+    
+    box.forEach(function (box){
+        // console.log(box);
+        box.addEventListener('click',(e)=>{
+            // console.log(e); 
+            // console.log(e.target); // gives the elemet where the event is triggering
+            const id=e.target.id;
+            // console.log(id);
+
+            switch (id) {
+                case "box_1":
+                    body.style.backgroundColor="blue";
+                    break;
+                case "box_2":
+                    body.style.backgroundColor="red";
+                    break;
+                case "box_3":
+                    body.style.backgroundColor="green";
+                    break;
+                case "box_4":
+                    body.style.backgroundColor="yellow";
+                    break;
+                
+                default:
+                    break;
+            }
+            
+            
+        })
+    })
+    
+    
+    
+</script>
+</html>
