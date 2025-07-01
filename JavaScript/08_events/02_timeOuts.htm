@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const name=()=>{
+        console.log("Ayush"); 
+    }
+
+    const changeHead=()=>{
+        document.querySelector('h1').innerHTML="Change in text";
+    }
+    setTimeout(name,2000); // it only take reference of the function 
+    const change=setTimeout(changeHead,2000); // it only take reference of the function 
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(change);
+        console.log("Stopped");
+        
+    });
+</script>
+</html>
