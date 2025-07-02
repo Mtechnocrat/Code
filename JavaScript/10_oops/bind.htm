@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button is clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library="React";
+            this.server="https://localhost:3000";
+
+            document.querySelector('button').addEventListener('click',this.handleClicked.bind(this)); // bind is used here to bind all the properties of the class to elemet buttons;
+            //bind is used to bind the context of 'this' to the function handleClicked
+            //if we don't use bind, 'this' will refer to the button element instead of the React class instance
+        }
+
+        handleClicked(){
+            console.log("Button is cliked");
+            console.log(this.server);
+            
+        }
+
+    }
+    const react=new React();
+
+</script>
+</html>
