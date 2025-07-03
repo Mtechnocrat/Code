@@ -9,9 +9,23 @@ function App() {
   // first value is the variable and second value is the functions that we gives here i.e is how to update the value of the first varible
 
   const increase = () => {
-    counter=counter+1;
-    setCounter(counter);
-    console.log("increased" , counter);
+    // counter=counter+1;
+    // setCounter(counter);
+    // console.log("increased" , counter);
+
+
+    // these set of code will increase counter by one by one as code is sent in bundle to  execute the functions.
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+
+    /// if we want to do coding this way then we can do
+    // this will  update the counter by 4 values;
+    setCounter((prevCounter)=>prevCounter+1);
+    setCounter((prevCounter)=>prevCounter+1);
+    setCounter((prevCounter)=>prevCounter+1);
+    setCounter((prevCounter)=>prevCounter+1);
   }
 
   const descrease=()=>{
